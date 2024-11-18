@@ -45,6 +45,7 @@ import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import ContentEditable from "./ui/ContentEditable";
 import { $generateNodesFromDOM } from "@lexical/html";
 import { $getRoot } from "lexical";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 
 export default function Editor(): JSX.Element {
   const isEditable = useLexicalEditable();
@@ -124,9 +125,9 @@ export default function Editor(): JSX.Element {
         <InlineImagePlugin />
         <LinkPlugin />
         {/* // hasLinkAttributes={hasLinkAttributes} */}
-
         <ClickableLinkPlugin disabled={isEditable} />
         <HorizontalRulePlugin />
+        <HistoryPlugin />
         <TabFocusPlugin />
         <TabIndentationPlugin />
         <PageBreakPlugin />
